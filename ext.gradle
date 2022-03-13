@@ -1,0 +1,47 @@
+
+ext.library = [
+        'lombok':'org.projectlombok:lombok:1.18.20',
+
+        'springBootWeb':'org.springframework.boot:spring-boot-starter-web',
+        'springBootWebflux':'org.springframework.boot:spring-boot-starter-webflux',
+        'springBootDevTools':'org.springframework.boot:spring-boot-devtools',
+        'springBootActuator':'org.springframework.boot:spring-boot-starter-actuator',
+        'springBootDataJpa':'org.springframework.boot:spring-boot-starter-data-jpa',
+        'springBootValidation':'org.springframework.boot:spring-boot-starter-validation',
+        'springBootSecurity':'org.springframework.boot:spring-boot-starter-security',
+        'springBootAOP':'org.springframework.boot:spring-boot-starter-aop',
+        'springSwagger':'io.springfox:springfox-swagger2:3.0.0',
+        'springSwaggerUI':'io.springfox:springfox-swagger-ui:3.0.0',
+
+        'postgres':'org.postgresql:postgresql:42.3.1',
+        'liquibase':'org.liquibase:liquibase-core',
+
+        'jasypt':'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3',
+
+        'kafkaClients':'org.apache.kafka:kafka-clients:2.8.0',
+        'kafkaCommon':'org.apache.kafka:kafka_2.13:2.8.0',
+
+        'springKafka':'org.springframework.kafka:spring-kafka:2.7.5',
+
+        'commonsIo':'commons-io:commons-io:2.8.0',
+        'commonsValidator':'commons-validator:commons-validator:1.7',
+
+        'guava':'com.google.guava:guava:31.0.1-jre',
+
+        // Валидатор паролей
+        'passay':'org.passay:passay:1.6.0',
+
+        // Поддержка JWT
+        'jjwt' : 'io.jsonwebtoken:jjwt:0.9.1'
+]
+
+ext.libraryTest = [
+        'mockito' : 'org.mockito:mockito-all:2.1.0',
+        'powerMockito' : 'org.powermock:powermock-api-mockito:1.7.4',
+        'powerMockitoJunit' : 'org.powermock:powermock-module-junit4:1.7.4',
+        'junit5api' : 'org.junit.jupiter:junit-jupiter-api:5.3.1',
+        'junit5engine' : 'org.junit.jupiter:junit-jupiter-engine:5.3.1',
+        'springBootTest' : 'org.springframework.boot:spring-boot-starter-test',
+        'springSecurityTest' : 'org.springframework.security:spring-security-test',
+        'mockitoJunitJupiter':'org.mockito:mockito-junit-jupiter:4.2.0'
+]
