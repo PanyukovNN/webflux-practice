@@ -4,32 +4,38 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
-group 'org.panyukovnn'
-version '1.0-SNAPSHOT'
+allprojects {
+    group 'org.panyukovnn'
+    version '1.0-SNAPSHOT'
 
-apply from: "$rootProject.projectDir/ext.gradle"
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
+    apply from: "$rootProject.projectDir/ext.gradle"
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
 
-configurations {
-    compileOnly.extendsFrom annotationProcessor
-    testCompileOnly.extendsFrom annotaionProcessor
-    testAnnotationProcessor.extendsFrom annotaionProcessor
-}
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
 
-dependencies {
-    implementation library.springBootWeb
+    configurations {
+        compileOnly.extendsFrom annotationProcessor
+        testCompileOnly.extendsFrom annotaionProcessor
+        testAnnotationProcessor.extendsFrom annotaionProcessor
+    }
 
-    annotationProcessor library.lombok
-}
+    dependencies {
+        implementation library.springBootWeb
 
-test {
-    useJUnit()
+        annotationProcessor library.lombok
+    }
+
+    test {
+        useJUnit()
+    }
 }

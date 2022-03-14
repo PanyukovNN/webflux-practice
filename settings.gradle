@@ -1,2 +1,3 @@
 rootProject.name = 'webflux-practice'
+include 'rxjavapractice'
 
