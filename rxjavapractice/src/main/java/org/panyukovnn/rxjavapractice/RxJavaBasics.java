@@ -9,13 +9,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
-public class RxJavaPractice {
+public class RxJavaBasics {
 
     public static void main(String[] args) throws InterruptedException {
 //        basicExample();
 //        creationWays();
 //        intervalExample();
-        subscriptionExample();
+//        subscriptionExample();
+        zipExample();
 
         Thread.sleep(5000);
     }
@@ -93,5 +94,13 @@ public class RxJavaPractice {
 
         Thread.sleep(1000);
         subscription.unsubscribe();
+    }
+
+    public static void zipExample() {
+        Observable.zip(
+                Observable.just("A", "B", "C"),
+                Observable.just("1", "2", "3"),
+                (x, y) -> x + y
+        ).forEach(System.out::println);
     }
 }
