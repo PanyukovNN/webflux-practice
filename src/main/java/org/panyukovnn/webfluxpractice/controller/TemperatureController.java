@@ -4,8 +4,7 @@ import org.panyukovnn.webfluxpractice.model.Temperature;
 import org.springframework.context.event.EventListener;
 import org.springframework.http.MediaType;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
@@ -23,7 +22,7 @@ public class TemperatureController {
 
     private final Set<SseEmitter> clients = new CopyOnWriteArraySet<>();
 
-    @RequestMapping(value = "/temperature-stream", method = RequestMethod.GET)
+    @GetMapping(value = "/temperature-stream")
     public SseEmitter events(HttpServletRequest request) {
         SseEmitter emitter = new SseEmitter();
         clients.add(emitter);

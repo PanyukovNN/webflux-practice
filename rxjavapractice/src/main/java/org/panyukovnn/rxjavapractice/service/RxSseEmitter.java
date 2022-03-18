@@ -11,19 +11,21 @@ import java.io.IOException;
  */
 public class RxSseEmitter extends SseEmitter {
 
-    static final long SSE_SESSION_TIMEOUT = 30 * 60 * 1000L;
+    private static final long SSE_SESSION_TIMEOUT = 30 * 60 * 1000L;
     private final Subscriber<Temperature> subscriber;
 
     public RxSseEmitter() {
         super(SSE_SESSION_TIMEOUT);
 
-        this.subscriber = new Subscriber<Temperature>() {
+        this.subscriber = new Subscriber<>() {
             @Override
             public void onCompleted() {
+                // Не делаем ничего, отписываться не надо
             }
 
             @Override
             public void onError(Throwable e) {
+                // Мы знаем что в нашей реализации ошибки не возникнет
             }
 
             @Override
@@ -36,6 +38,7 @@ public class RxSseEmitter extends SseEmitter {
             }
         };
 
+        // задаем эмиттеру поведение в случае завершения потока данных или ошибки по таймауту
         onCompletion(subscriber::unsubscribe);
         onTimeout(subscriber::unsubscribe);
     }
