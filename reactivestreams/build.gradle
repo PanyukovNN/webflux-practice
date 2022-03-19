@@ -1,4 +1,5 @@
 
 dependencies {
     implementation library.rxjava1
+    implementation library.reactivestreams
 }
