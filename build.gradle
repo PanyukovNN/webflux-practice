@@ -34,8 +34,4 @@ allprojects {
 
         annotationProcessor library.lombok
     }
-
-    test {
-        useJUnit()
-    }
 }

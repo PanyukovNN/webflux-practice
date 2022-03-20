@@ -2,4 +2,13 @@
 dependencies {
     implementation library.rxjava1
     implementation library.reactivestreams
+
+
+    testImplementation libraryTest.junit5api
+    testImplementation libraryTest.junit5engine
+    testImplementation libraryTest.reactiveStreamsTck
+}
+
+test {
+    useJUnitPlatform()
 }

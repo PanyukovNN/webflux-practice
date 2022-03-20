@@ -48,5 +48,7 @@ ext.libraryTest = [
         'junit5engine' : 'org.junit.jupiter:junit-jupiter-engine:5.3.1',
         'springBootTest' : 'org.springframework.boot:spring-boot-starter-test',
         'springSecurityTest' : 'org.springframework.security:spring-security-test',
-        'mockitoJunitJupiter':'org.mockito:mockito-junit-jupiter:4.2.0'
+        'mockitoJunitJupiter':'org.mockito:mockito-junit-jupiter:4.2.0',
+        'reactiveStreamsTck' : 'org.reactivestreams:reactive-streams-tck:1.0.3'
+
 ]
