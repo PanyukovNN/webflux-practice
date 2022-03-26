@@ -36,7 +36,8 @@ ext.library = [
 
         'rxjava1' : 'io.reactivex:rxjava:1.3.8',
         'rxjava2' : 'io.reactivex.rxjava2:rxjava:2.2.21',
-        'reactivestreams' : 'org.reactivestreams:reactive-streams:1.0.3'
+        'reactivestreams' : 'org.reactivestreams:reactive-streams:1.0.3',
+        'projectreactor' : 'io.projectreactor:reactor-core:3.4.16'
 
 ]
 
@@ -49,6 +50,6 @@ ext.libraryTest = [
         'springBootTest' : 'org.springframework.boot:spring-boot-starter-test',
         'springSecurityTest' : 'org.springframework.security:spring-security-test',
         'mockitoJunitJupiter':'org.mockito:mockito-junit-jupiter:4.2.0',
-        'reactiveStreamsTck' : 'org.reactivestreams:reactive-streams-tck:1.0.3'
-
+        'reactiveStreamsTck' : 'org.reactivestreams:reactive-streams-tck:1.0.3',
+        'projectreactor' : 'io.projectreactor:reactor-test:3.4.16'
 ]

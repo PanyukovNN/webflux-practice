@@ -1,0 +1,6 @@
+
+dependencies {
+    implementation library.projectreactor
+
+    testImplementation libraryTest.projectreactor
+}
