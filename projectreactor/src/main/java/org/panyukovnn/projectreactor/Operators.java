@@ -10,7 +10,7 @@ import java.time.Instant;
 public class Operators {
 
     public static void main(String[] args) {
-        indexTimestamp();
+        buffer();
     }
 
     private static void indexTimestamp() {
@@ -21,6 +21,26 @@ public class Operators {
                         e.getT1(),
                         Instant.ofEpochMilli(e.getT2().getT1()),
                         e.getT2().getT2()));
+    }
+
+    private static void scan() {
+        Flux.range(1, 5)
+                .scan(0, (acc, elem) -> acc + elem)
+                .subscribe(result -> log.info("Result: {}", result));
+    }
+
+    private static void concat() {
+        Flux.concat(
+                Flux.range(1, 3),
+                Flux.range(4, 2),
+                Flux.range(6, 5)
+        ).subscribe(e -> log.info("onNext: {}", e));
+    }
+
+    private static void buffer() {
+        Flux.range(1, 13)
+                .buffer(4)
+                .subscribe(e -> log.info("onNext: {}", e));
     }
 
 }
